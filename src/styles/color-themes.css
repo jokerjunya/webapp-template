@@ -284,8 +284,59 @@
 }
 
 /* ==========================================================================
-   WARM THEME - Already defined above
+   WARM THEME - Cozy & Inviting
    ========================================================================== */
+.theme-warm {
+  /* Override base theme variables */
+  --background: 20 14% 98%;
+  --foreground: 20 14% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14% 4%;
+  --muted: 20 14% 96%;
+  --muted-foreground: 20 6% 46%;
+  --accent: 20 14% 96%;
+  --accent-foreground: 20 14% 4%;
+  --border: 20 13% 91%;
+  --input: 20 13% 91%;
+  
+  /* Primary Brand Colors */
+  --primary: 25 75% 47%;           /* Warm Orange #D97706 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 45 93% 47%;         /* Golden Yellow #F59E0B */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-peach: 24 70% 56%;      /* Soft Peach #FB923C */
+  --accent-cream: 39 77% 83%;      /* Warm Cream #FDE68A */
+  --accent-brown: 25 59% 34%;      /* Rich Brown #92400E */
+  
+  /* Status Colors */
+  --success: 142 69% 45%;          /* Warm Green #22C55E */
+  --warning: 45 93% 47%;           /* Golden Warning #F59E0B */
+  --danger: 0 84% 60%;             /* Warm Red #EF4444 */
+  --info: 217 91% 60%;             /* Warm Blue #3B82F6 */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-peach)) 0%, hsl(var(--accent-cream)) 100%);
+}
+
+.theme-warm.dark {
+  --background: 20 14% 4%;
+  --foreground: 0 0% 98%;
+  --card: 20 14% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 20 14% 4%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 20 14% 15%;
+  --muted-foreground: 20 7% 64%;
+  --accent: 20 14% 15%;
+  --accent-foreground: 0 0% 98%;
+  --border: 20 14% 15%;
+  --input: 20 14% 15%;
+}
 
 /* ==========================================================================
    SEMANTIC COLOR SYSTEM - Consistent Meaning Across Themes
