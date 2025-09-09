@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { BrandIcons } from '@/components/icons/brand-icons';
 import { 
   BarChart3, 
   Users, 
@@ -9,37 +11,76 @@ import {
   Activity,
   CreditCard,
   DollarSign,
-  Package
+  Package,
+  Home,
+  Settings,
+  User,
+  ArrowLeft,
+  Mic,
+  SkipBack,
+  SkipForward,
+  Volume2,
+  Shuffle,
+  Repeat,
+  Search,
+  Library,
+  Plus,
+  Download,
+  Heart,
+  Shield,
+  Globe,
+  Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DashboardPage() {
   const stats = [
     {
-      title: 'Total Revenue',
-      value: '¥45,231',
-      change: '+20.1%',
-      icon: <DollarSign className="h-4 w-4 text-muted-foreground" />,
+      title: 'プレイリスト',
+      value: '127',
+      change: '+12 今週',
+      icon: <BrandIcons.MusicNote className="h-5 w-5 text-primary" />,
+      brand: 'spotify',
     },
     {
-      title: 'Subscriptions',
-      value: '+2350',
-      change: '+180.1%',
-      icon: <Users className="h-4 w-4 text-muted-foreground" />,
+      title: '視聴時間',
+      value: '340h',
+      change: '+18.5%',
+      icon: <BrandIcons.Netflix className="h-5 w-5 text-netflix" />,
+      brand: 'netflix',
     },
     {
-      title: 'Sales',
-      value: '+12,234',
-      change: '+19%',
-      icon: <CreditCard className="h-4 w-4 text-muted-foreground" />,
+      title: 'ダウンロード済み',
+      value: '2,841',
+      change: '+247 新着',
+      icon: <BrandIcons.Apple className="h-5 w-5 text-apple" />,
+      brand: 'apple',
     },
     {
-      title: 'Active Now',
-      value: '+573',
-      change: '+201',
-      icon: <Activity className="h-4 w-4 text-muted-foreground" />,
+      title: 'AIチャット',
+      value: '1,523',
+      change: '+89 今日',
+      icon: <BrandIcons.ChatGPT className="h-5 w-5 text-chatgpt" />,
+      brand: 'chatgpt',
     },
   ];
+
+  const sidebarItems = [
+    { icon: <Home className="h-5 w-5" />, label: 'ホーム', active: true },
+    { icon: <Search className="h-5 w-5" />, label: '検索' },
+    { icon: <Library className="h-5 w-5" />, label: 'ライブラリ' },
+    { icon: <Plus className="h-5 w-5" />, label: 'プレイリスト作成' },
+    { icon: <Heart className="h-5 w-5" />, label: 'お気に入り' },
+    { icon: <Download className="h-5 w-5" />, label: 'ダウンロード済み' },
+  ];
+
+  const currentTrack = {
+    title: "Modern Design Inspiration",
+    artist: "UI/UX Collective",
+    album: "Design Systems 2024",
+    duration: "3:42",
+    isPlaying: false,
+  };
 
   const recentSales = [
     {
@@ -70,162 +111,344 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="flex-1 space-y-4 p-8 pt-6">
-        {/* Header */}
-        <div className="flex items-center justify-between space-y-2">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight">ダッシュボード</h2>
-            <p className="text-muted-foreground">
-              アプリケーションの概要とメトリクスを確認できます。
-            </p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Button variant="outline">
-              <Package className="mr-2 h-4 w-4" />
-              Export
-            </Button>
-            <Button>
-              <TrendingUp className="mr-2 h-4 w-4" />
-              View Report
-            </Button>
+    <div className="min-h-screen bg-background flex">
+      {/* Spotify-style Sidebar */}
+      <div className="w-64 bg-card border-r border-border p-6 space-y-6">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <BrandIcons.MusicNote className="h-8 w-8 text-primary" />
+          <span className="font-bold text-xl">ModernUI</span>
+        </div>
+
+        {/* Navigation */}
+        <nav className="space-y-2">
+          {sidebarItems.map((item, index) => (
+            <button
+              key={index}
+              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors ${
+                item.active 
+                  ? 'bg-primary/20 text-primary font-medium' 
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+              }`}
+            >
+              {item.icon}
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Recently Played */}
+        <div className="space-y-3">
+          <h3 className="font-semibold text-sm text-muted-foreground">最近再生した項目</h3>
+          <div className="space-y-2">
+            {['お気に入りの曲', 'チルアウト', '作業用BGM'].map((item, index) => (
+              <div key={index} className="flex items-center gap-2 p-2 rounded hover:bg-muted cursor-pointer">
+                <div className="w-8 h-8 bg-primary/20 rounded flex items-center justify-center">
+                  <BrandIcons.MusicNote className="h-4 w-4 text-primary" />
+                </div>
+                <span className="text-sm">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <Card key={index} className="card-hover">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
-                  {stat.title}
-                </CardTitle>
-                {stat.icon}
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <p className="text-xs text-muted-foreground">
-                  <span className="text-green-600">{stat.change}</span> from last month
+        {/* User Profile */}
+        <div className="mt-auto pt-6 border-t border-border">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+              <User className="h-4 w-4 text-primary" />
+            </div>
+            <span className="text-sm font-medium">ユーザー</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="border-b border-border p-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="/">
+                  <ArrowLeft className="h-4 w-4" />
+                </Link>
+              </Button>
+              <div>
+                <h1 className="text-3xl font-bold">ダッシュボード</h1>
+                <p className="text-muted-foreground">
+                  モダンデザインのメトリクスとインサイト
                 </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <Button variant="outline">
+                <Settings className="mr-2 h-4 w-4" />
+                設定
+              </Button>
+            </div>
+          </div>
+        </header>
+
+        <div className="flex-1 p-6 space-y-6 custom-scrollbar overflow-y-auto">
+
+          {/* Stats Grid */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat, index) => (
+              <Card key={index} className={`card-hover relative overflow-hidden border-0 shadow-lg ${stat.brand === 'netflix' ? 'netflix-card-hover' : stat.brand === 'apple' ? 'apple-card-hover' : ''}`}>
+                <div className={`absolute inset-0 opacity-5 ${
+                  stat.brand === 'spotify' ? 'spotify-gradient' :
+                  stat.brand === 'netflix' ? 'netflix-gradient' :
+                  stat.brand === 'apple' ? 'apple-gradient' :
+                  stat.brand === 'chatgpt' ? 'chatgpt-gradient' : ''
+                }`} />
+                <CardHeader className="relative z-10 flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium text-muted-foreground">
+                    {stat.title}
+                  </CardTitle>
+                  <div className="p-2 rounded-lg bg-background/50 backdrop-blur-sm">
+                    {stat.icon}
+                  </div>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <div className="text-3xl font-bold">{stat.value}</div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {stat.change}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Now Playing Card (Spotify-inspired) */}
+            <Card className="card-hover spotify-gradient text-white border-0 shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BrandIcons.Play className="h-5 w-5" />
+                  今再生中
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center">
+                    <BrandIcons.MusicNote className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{currentTrack.title}</h3>
+                    <p className="text-sm opacity-80">{currentTrack.artist}</p>
+                    <p className="text-xs opacity-60">{currentTrack.album}</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      <Shuffle className="h-4 w-4" />
+                    </Button>
+                    <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      <SkipBack className="h-4 w-4" />
+                    </Button>
+                    <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      {currentTrack.isPlaying ? <BrandIcons.Pause className="h-5 w-5" /> : <BrandIcons.Play className="h-5 w-5" />}
+                    </Button>
+                    <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      <SkipForward className="h-4 w-4" />
+                    </Button>
+                    <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                      <Repeat className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                    <Volume2 className="h-4 w-4" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
 
-        {/* Main Content Grid */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-          {/* Chart Card */}
-          <Card className="col-span-4 card-hover">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5" />
-                概要
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pl-2">
-              <div className="h-[300px] flex items-center justify-center text-muted-foreground">
-                <div className="text-center">
-                  <BarChart3 className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p>チャートコンポーネントがここに表示されます</p>
-                  <p className="text-sm">Chart.js や Recharts を統合可能</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Recent Sales Card */}
-          <Card className="col-span-3 card-hover">
-            <CardHeader>
-              <CardTitle>Recent Sales</CardTitle>
-              <CardDescription>
-                You made 265 sales this month.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-8">
-                {recentSales.map((sale, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="ml-4 space-y-1">
-                      <p className="text-sm font-medium leading-none">
-                        {sale.name}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {sale.email}
-                      </p>
+            {/* Netflix-style Content */}
+            <Card className="card-hover glass-effect border-white/20 dark:border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BrandIcons.Netflix className="h-5 w-5 text-netflix" />
+                  おすすめコンテンツ
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {['Modern Design Trends', 'UI/UX Best Practices', 'Component Libraries'].map((title, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-background/50 hover:bg-background/80 transition-all cursor-pointer group">
+                    <div className="w-12 h-8 bg-netflix/20 rounded flex items-center justify-center">
+                      <BrandIcons.Play className="h-3 w-3 text-netflix" />
                     </div>
-                    <div className="ml-auto font-medium">{sale.amount}</div>
+                    <div>
+                      <p className="font-medium text-sm">{title}</p>
+                      <p className="text-xs text-muted-foreground">デザインシリーズ</p>
+                    </div>
                   </div>
                 ))}
+              </CardContent>
+            </Card>
+
+            {/* Apple-style Settings */}
+            <Card className="card-hover glass-effect border-white/20 dark:border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BrandIcons.Apple className="h-5 w-5 text-apple" />
+                  システム設定
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {[
+                  { label: 'ダークモード', value: 'オン' },
+                  { label: '通知', value: '許可' },
+                  { label: 'アップデート', value: '自動' },
+                  { label: 'ストレージ', value: '67%使用' },
+                ].map((setting, index) => (
+                  <div key={index} className="flex items-center justify-between p-2 rounded-lg hover:bg-apple/5 transition-colors">
+                    <span className="text-sm font-medium">{setting.label}</span>
+                    <span className="text-xs text-apple bg-apple/10 px-2 py-1 rounded-full">{setting.value}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* ChatGPT-style Chat Interface */}
+          <Card className="card-hover glass-effect border-white/20 dark:border-white/10">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <BrandIcons.ChatGPT className="h-5 w-5 text-chatgpt" />
+                AI アシスタント
+              </CardTitle>
+              <CardDescription>
+                モダンUIについて質問してみましょう
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="chat-bubble chat-bubble-assistant">
+                <p className="text-sm">こんにちは！ModernUIテンプレートについて何か質問はありますか？</p>
+              </div>
+              <div className="chat-bubble chat-bubble-user">
+                <p className="text-sm">各サービスのデザインをどのように統合していますか？</p>
+              </div>
+              <div className="chat-bubble chat-bubble-assistant">
+                <p className="text-sm">Spotify、Netflix、Apple、ChatGPTの優れたデザイン要素を分析し、統一されたデザインシステムに統合しています。カラーパレット、タイポグラフィ、インタラクションパターンを体系化しました。</p>
+              </div>
+              <div className="flex items-center gap-2 mt-4">
+                <input 
+                  type="text" 
+                  placeholder="メッセージを入力..." 
+                  className="flex-1 px-3 py-2 rounded-full bg-background border border-border focus:outline-none focus:ring-2 focus:ring-chatgpt"
+                />
+                <Button size="sm" className="btn-chatgpt rounded-full">
+                  <Mic className="h-4 w-4" />
+                </Button>
               </div>
             </CardContent>
           </Card>
+
+          {/* Feature Showcase */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "認証システム",
+                description: "NextAuth.js v5によるセキュアな認証",
+                icon: <Shield className="h-5 w-5" />,
+                color: "primary",
+                tags: ["OAuth", "JWT", "セッション管理"]
+              },
+              {
+                title: "データベース",
+                description: "Prisma + PostgreSQLによる型安全なDB",
+                icon: <Globe className="h-5 w-5" />,
+                color: "apple",
+                tags: ["Prisma", "PostgreSQL", "型安全"]
+              },
+              {
+                title: "UIコンポーネント",
+                description: "shadcn/ui + Tailwind CSSのモダンUI",
+                icon: <Sparkles className="h-5 w-5" />,
+                color: "netflix",
+                tags: ["shadcn/ui", "Tailwind", "レスポンシブ"]
+              },
+              {
+                title: "デプロイ",
+                description: "Vercelによる自動デプロイ",
+                icon: <Package className="h-5 w-5" />,
+                color: "chatgpt",
+                tags: ["Vercel", "CI/CD", "高速配信"]
+              }
+            ].map((feature, index) => (
+              <Card key={index} className="card-hover border-0 shadow-lg">
+                <CardHeader className="pb-3">
+                  <div className={`w-10 h-10 rounded-lg bg-${feature.color}/20 flex items-center justify-center text-${feature.color} mb-2`}>
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  <CardDescription className="text-sm">
+                    {feature.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-1">
+                    {feature.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="outline" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card className="card-hover">
-            <CardHeader>
-              <CardTitle className="text-lg">認証システム</CardTitle>
-              <CardDescription>
-                NextAuth.js v5を使用したモダンな認証
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <Badge variant="outline">Google OAuth</Badge>
-                <Badge variant="outline">GitHub OAuth</Badge>
-                <Badge variant="outline">Email/Password</Badge>
+        {/* Music Player Footer (Spotify-style) */}
+        <div className="border-t border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                <BrandIcons.MusicNote className="h-6 w-6 text-primary" />
               </div>
-              <Button className="mt-4 w-full" variant="outline" asChild>
-                <Link href="/" as="/auth/signin">認証を試す</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="card-hover">
-            <CardHeader>
-              <CardTitle className="text-lg">データベース</CardTitle>
-              <CardDescription>
-                Prisma ORM + PostgreSQLによる型安全なDB操作
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <Badge variant="outline">Prisma ORM</Badge>
-                <Badge variant="outline">PostgreSQL</Badge>
-                <Badge variant="outline">Type Safety</Badge>
+              <div>
+                <p className="font-medium text-sm">{currentTrack.title}</p>
+                <p className="text-xs text-muted-foreground">{currentTrack.artist}</p>
               </div>
-              <Button className="mt-4 w-full" variant="outline" asChild>
-                <Link href="/api/health">API Health Check</Link>
+              <Button size="sm" variant="ghost">
+                <BrandIcons.Heart className="h-4 w-4" />
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <Button size="sm" variant="ghost">
+                <Shuffle className="h-4 w-4" />
+              </Button>
+              <Button size="sm" variant="ghost">
+                <SkipBack className="h-4 w-4" />
+              </Button>
+              <Button size="sm" className="btn-spotify text-white rounded-full">
+                {currentTrack.isPlaying ? <BrandIcons.Pause className="h-4 w-4" /> : <BrandIcons.Play className="h-4 w-4" />}
+              </Button>
+              <Button size="sm" variant="ghost">
+                <SkipForward className="h-4 w-4" />
+              </Button>
+              <Button size="sm" variant="ghost">
+                <Repeat className="h-4 w-4" />
+              </Button>
+            </div>
 
-          <Card className="card-hover">
-            <CardHeader>
-              <CardTitle className="text-lg">UI Components</CardTitle>
-              <CardDescription>
-                shadcn/ui + Tailwind CSSによるモダンなUI
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <Badge variant="outline">shadcn/ui</Badge>
-                <Badge variant="outline">Tailwind CSS</Badge>
-                <Badge variant="outline">Dark Mode</Badge>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-muted-foreground">2:31</span>
+              <div className="w-24 h-1 bg-muted rounded-full">
+                <div className="w-1/3 h-full bg-primary rounded-full"></div>
               </div>
-              <Button className="mt-4 w-full" variant="outline" asChild>
-                <Link href="/" as="/components">Components</Link>
+              <span className="text-xs text-muted-foreground">{currentTrack.duration}</span>
+              <Button size="sm" variant="ghost">
+                <Volume2 className="h-4 w-4" />
               </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Back to Home */}
-        <div className="pt-6">
-          <Button variant="ghost" asChild>
-            <Link href="/">← ホームに戻る</Link>
-          </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

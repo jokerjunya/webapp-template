@@ -23,6 +23,8 @@ const config: Config = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        
+        // Primary brand colors
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -31,6 +33,22 @@ const config: Config = {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
+        
+        // Brand-specific colors
+        netflix: {
+          DEFAULT: 'hsl(var(--netflix))',
+          foreground: 'hsl(var(--netflix-foreground))',
+        },
+        apple: {
+          DEFAULT: 'hsl(var(--apple))',
+          foreground: 'hsl(var(--apple-foreground))',
+        },
+        chatgpt: {
+          DEFAULT: 'hsl(var(--chatgpt))',
+          foreground: 'hsl(var(--chatgpt-foreground))',
+        },
+        
+        // System colors
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
