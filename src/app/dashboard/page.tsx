@@ -115,9 +115,9 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-background flex transition-colors duration-500">
       {/* Spotify-style Sidebar */}
-      <div className="w-64 bg-card border-r border-border p-6 space-y-6">
+      <div className="w-64 bg-card border-r border-border p-6 space-y-6 transition-colors duration-500">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <BrandIcons.MusicNote className="h-8 w-8 text-primary" />
@@ -170,7 +170,7 @@ export default function DashboardPage() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <header className="border-b border-border p-6">
+        <header className="border-b border-border p-6 bg-card transition-colors duration-500">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="icon" asChild>

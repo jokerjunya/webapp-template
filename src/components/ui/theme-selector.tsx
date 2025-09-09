@@ -18,8 +18,9 @@ export type ColorTheme =
   | 'professional'
   | 'creative' 
   | 'minimal'
-  | 'vibrant'
-  | 'nature';
+  | 'ocean'
+  | 'nature'
+  | 'warm';
 
 interface ThemeOption {
   id: ColorTheme;
@@ -40,36 +41,43 @@ const themes: ThemeOption[] = [
   {
     id: 'professional',
     name: 'Professional',
-    description: 'Corporate & Business focused',
-    colors: ['#0F172A', '#3B82F6', '#EAB308', '#0D9488'],
+    description: 'Sophisticated business elegance',
+    colors: ['#2563EB', '#1E293B', '#6366F1', '#059669'],
     category: 'business',
   },
   {
     id: 'creative',
     name: 'Creative',
-    description: 'Vibrant & Artistic design',
-    colors: ['#8B5CF6', '#E879F9', '#FF6B35', '#06B6D4'],
+    description: 'Artistic expression & innovation',
+    colors: ['#9333EA', '#E11D48', '#8B5CF6', '#F472B6'],
     category: 'creative',
   },
   {
     id: 'minimal',
     name: 'Minimal',
-    description: 'Clean & Sophisticated',
-    colors: ['#333333', '#737373', '#999999', '#22C55E'],
+    description: 'Pure & timeless simplicity',
+    colors: ['#171717', '#404040', '#525252', '#22C55E'],
     category: 'lifestyle',
   },
   {
-    id: 'vibrant',
-    name: 'Vibrant',
-    description: 'Energetic & Dynamic',
-    colors: ['#FF0844', '#9333EA', '#00D4FF', '#80FF00'],
-    category: 'creative',
+    id: 'ocean',
+    name: 'Ocean',
+    description: 'Fresh & contemporary blues',
+    colors: ['#0EA5E9', '#22D3EE', '#06B6D4', '#059669'],
+    category: 'lifestyle',
   },
   {
     id: 'nature',
     name: 'Nature',
-    description: 'Organic & Sustainable',
-    colors: ['#166534', '#B45309', '#0EA5E9', '#D97706'],
+    description: 'Organic earth tones & sustainability',
+    colors: ['#059669', '#D97706', '#65A30D', '#F97316'],
+    category: 'lifestyle',
+  },
+  {
+    id: 'warm',
+    name: 'Warm',
+    description: 'Cozy & inviting comfort',
+    colors: ['#D97706', '#F59E0B', '#FB923C', '#22C55E'],
     category: 'lifestyle',
   },
 ];
@@ -182,16 +190,22 @@ export function useColorTheme() {
   React.useEffect(() => {
     // Apply theme to document
     const root = document.documentElement;
+    const body = document.body;
     
-    // Remove all theme classes
+    // Remove all theme classes from both root and body
     themes.forEach(t => {
       root.classList.remove(`theme-${t.id}`);
+      body.classList.remove(`theme-${t.id}`);
     });
     
-    // Add current theme class
+    // Add current theme class to both root and body
     if (theme !== 'default') {
       root.classList.add(`theme-${theme}`);
+      body.classList.add(`theme-${theme}`);
     }
+    
+    // Force re-render of CSS variables
+    root.style.setProperty('--theme-applied', theme);
     
     // Save to localStorage
     localStorage.setItem('color-theme', theme);

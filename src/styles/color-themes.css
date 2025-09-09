@@ -1,169 +1,291 @@
 /**
- * Premium Color Templates - 2024 Design Trends
- * WCAG 2.1 AA Compliant | Modern & Accessible
+ * Premium Color Templates - Timeless & Elegant
+ * WCAG 2.1 AA Compliant | Inspired by Material Design 3 & Human Interface Guidelines
  */
 
 /* ==========================================================================
-   PROFESSIONAL THEME - Business & Corporate
+   PROFESSIONAL THEME - Sophisticated Business
    ========================================================================== */
 .theme-professional {
+  /* Override base theme variables */
+  --background: 0 0% 99%;
+  --foreground: 224 71% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 220 14% 96%;
+  --accent-foreground: 224 71% 4%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  
   /* Primary Brand Colors */
-  --primary: 222 84% 5%;           /* Rich Black #0F172A */
-  --primary-foreground: 210 40% 98%; /* Pure White */
-  --secondary: 215 25% 27%;        /* Professional Blue-Gray #3C4B64 */
-  --secondary-foreground: 210 40% 98%;
-  
-  /* Accent Colors */
-  --accent-blue: 217 91% 60%;      /* Professional Blue #3B82F6 */
-  --accent-gold: 45 93% 47%;       /* Corporate Gold #EAB308 */
-  --accent-teal: 173 58% 39%;      /* Sophisticated Teal #0D9488 */
-  
-  /* Status Colors */
-  --success: 142 71% 45%;          /* Success Green #10A37F */
-  --warning: 38 92% 50%;           /* Warning Orange #FB923C */
-  --danger: 0 84% 60%;             /* Error Red #EF4444 */
-  --info: 199 89% 48%;             /* Info Blue #0EA5E9 */
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-teal) 100%);
-}
-
-/* ==========================================================================
-   CREATIVE THEME - Design & Creative Industries  
-   ========================================================================== */
-.theme-creative {
-  /* Primary Brand Colors */
-  --primary: 271 81% 56%;          /* Creative Purple #8B5CF6 */
+  --primary: 221 83% 53%;          /* Classic Blue #2563EB */
   --primary-foreground: 0 0% 98%;
-  --secondary: 322 84% 60%;        /* Creative Pink #E879F9 */
+  --secondary: 215 28% 17%;        /* Deep Slate #1E293B */
   --secondary-foreground: 0 0% 98%;
   
   /* Accent Colors */
-  --accent-orange: 25 95% 53%;     /* Creative Orange #FF6B35 */
-  --accent-cyan: 189 94% 43%;      /* Creative Cyan #06B6D4 */
-  --accent-lime: 84 81% 44%;       /* Creative Lime #65A30D */
+  --accent-blue: 217 91% 60%;      /* Material Blue #3B82F6 */
+  --accent-indigo: 239 84% 67%;    /* Elegant Indigo #6366F1 */
+  --accent-slate: 215 25% 27%;     /* Professional Slate #374151 */
+  
+  /* Status Colors */
+  --success: 142 71% 45%;          /* Success Green #059669 */
+  --warning: 43 96% 56%;           /* Amber Warning #F59E0B */
+  --danger: 0 84% 60%;             /* Coral Red #EF4444 */
+  --info: 199 89% 48%;             /* Sky Blue #0EA5E9 */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-indigo)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-blue)) 0%, hsl(var(--accent-slate)) 100%);
+}
+
+.theme-professional.dark {
+  --background: 222 84% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222 84% 4%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 84% 4%;
+  --popover-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+}
+
+/* ==========================================================================
+   CREATIVE THEME - Artistic & Expressive
+   ========================================================================== */
+.theme-creative {
+  /* Override base theme variables */
+  --background: 0 0% 99%;
+  --foreground: 224 71% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
+  --muted: 270 5% 96%;
+  --muted-foreground: 270 4% 46%;
+  --accent: 270 5% 96%;
+  --accent-foreground: 224 71% 4%;
+  --border: 270 5% 91%;
+  --input: 270 5% 91%;
+  
+  /* Primary Brand Colors */
+  --primary: 262 83% 58%;          /* Refined Purple #9333EA */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 316 70% 56%;        /* Elegant Rose #E11D48 */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-purple: 271 81% 56%;    /* Rich Purple #8B5CF6 */
+  --accent-pink: 330 81% 60%;      /* Soft Pink #F472B6 */
+  --accent-orange: 31 81% 56%;     /* Warm Orange #FB923C */
   
   /* Status Colors */
   --success: 142 71% 45%;          /* Success Green */
-  --warning: 45 93% 47%;           /* Warning Gold */
-  --danger: 0 91% 71%;             /* Bright Error Red #FF4757 */
-  --info: 217 91% 60%;             /* Info Blue */
+  --warning: 43 96% 56%;           /* Creative Amber */
+  --danger: 0 84% 60%;             /* Artistic Red */
+  --info: 217 91% 60%;             /* Creative Blue */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-cyan) 100%);
-  --gradient-rainbow: linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #65A30D 75%, #06B6D4 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-purple)) 0%, hsl(var(--accent-pink)) 100%);
+  --gradient-rainbow: linear-gradient(135deg, hsl(var(--accent-orange)) 0%, hsl(var(--primary)) 50%, hsl(var(--accent-pink)) 100%);
+}
+
+.theme-creative.dark {
+  --background: 262 47% 4%;
+  --foreground: 0 0% 98%;
+  --card: 262 47% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 262 47% 4%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 262 30% 17%;
+  --muted-foreground: 262 15% 65%;
+  --accent: 262 30% 17%;
+  --accent-foreground: 0 0% 98%;
+  --border: 262 30% 17%;
+  --input: 262 30% 17%;
 }
 
 /* ==========================================================================
-   MINIMAL THEME - Clean & Sophisticated
+   MINIMAL THEME - Pure & Timeless
    ========================================================================== */
 .theme-minimal {
+  /* Override base theme variables */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 6%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 6%;
+  --muted: 0 0% 97%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 97%;
+  --accent-foreground: 0 0% 6%;
+  --border: 0 0% 89%;
+  --input: 0 0% 89%;
+  
   /* Primary Brand Colors */
-  --primary: 0 0% 20%;             /* Minimal Dark Gray #333333 */
+  --primary: 0 0% 9%;              /* Pure Black #171717 */
   --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 45%;           /* Medium Gray #737373 */
+  --secondary: 0 0% 25%;           /* Elegant Gray #404040 */
   --secondary-foreground: 0 0% 98%;
   
   /* Accent Colors */
-  --accent-charcoal: 0 0% 15%;     /* Deep Charcoal #262626 */
-  --accent-silver: 0 0% 60%;       /* Silver Gray #999999 */
-  --accent-cream: 48 33% 97%;      /* Warm Cream #FAFAF9 */
+  --accent-gray: 0 0% 33%;         /* Modern Gray #525252 */
+  --accent-light: 0 0% 71%;        /* Light Gray #B5B5B5 */
+  --accent-warm: 20 6% 90%;        /* Warm White #E7E5E4 */
   
   /* Status Colors */
-  --success: 142 69% 58%;          /* Soft Success Green #22C55E */
-  --warning: 43 96% 56%;           /* Soft Warning Yellow #FACC15 */
-  --danger: 0 72% 51%;             /* Soft Error Red #DC2626 */
-  --info: 213 94% 68%;             /* Soft Info Blue #60A5FA */
+  --success: 142 69% 45%;          /* Clean Green #22C55E */
+  --warning: 38 92% 50%;           /* Pure Amber #F59E0B */
+  --danger: 0 84% 60%;             /* Simple Red #EF4444 */
+  --info: 213 94% 68%;             /* Clear Blue #60A5FA */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-charcoal) 0%, var(--accent-silver) 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-gray)) 0%, hsl(var(--accent-light)) 100%);
+}
+
+.theme-minimal.dark {
+  --background: 0 0% 6%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 6%;
 }
 
 /* ==========================================================================
-   VIBRANT THEME - Energetic & Dynamic
+   OCEAN THEME - Fresh & Contemporary
    ========================================================================== */
-.theme-vibrant {
+.theme-ocean {
+  /* Override base theme variables */
+  --background: 197 37% 96%;
+  --foreground: 200 50% 7%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 50% 7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 200 50% 7%;
+  --muted: 197 19% 93%;
+  --muted-foreground: 200 25% 45%;
+  --accent: 197 19% 93%;
+  --accent-foreground: 200 50% 7%;
+  --border: 197 19% 89%;
+  --input: 197 19% 89%;
+  
   /* Primary Brand Colors */
-  --primary: 339 100% 52%;         /* Vibrant Magenta #FF0844 */
+  --primary: 199 89% 48%;          /* Ocean Blue #0EA5E9 */
   --primary-foreground: 0 0% 98%;
-  --secondary: 262 83% 58%;        /* Electric Purple #9333EA */
+  --secondary: 187 85% 53%;        /* Teal #22D3EE */
   --secondary-foreground: 0 0% 98%;
   
   /* Accent Colors */
-  --accent-electric: 192 100% 50%; /* Electric Blue #00D4FF */
-  --accent-neon: 84 100% 50%;      /* Neon Green #80FF00 */
-  --accent-hot: 14 100% 50%;       /* Hot Orange #FF4400 */
+  --accent-sky: 204 94% 94%;       /* Sky Blue #DBEAFE */
+  --accent-sea: 188 94% 43%;       /* Sea Green #06B6D4 */
+  --accent-navy: 213 31% 91%;      /* Navy Light #DBEAFE */
   
   /* Status Colors */
-  --success: 142 100% 35%;         /* Vibrant Success Green #00B359 */
-  --warning: 45 100% 50%;          /* Vibrant Warning Orange #FFB300 */
-  --danger: 0 100% 50%;            /* Vibrant Error Red #FF0000 */
-  --info: 200 100% 50%;            /* Vibrant Info Cyan #00BFFF */
+  --success: 160 84% 39%;          /* Ocean Green #059669 */
+  --warning: 45 93% 47%;           /* Sunset Orange #F59E0B */
+  --danger: 0 84% 60%;             /* Coral Red #EF4444 */
+  --info: 204 94% 94%;             /* Clear Sky #DBEAFE */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-neon) 100%);
-  --gradient-energy: linear-gradient(135deg, #FF0844 0%, #FFB300 25%, #80FF00 50%, #00D4FF 75%, #9333EA 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-sea)) 0%, hsl(var(--accent-sky)) 100%);
+}
+
+.theme-ocean.dark {
+  --background: 200 50% 4%;
+  --foreground: 0 0% 98%;
+  --card: 200 50% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 200 50% 4%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 200 50% 14%;
+  --muted-foreground: 200 20% 65%;
+  --accent: 200 50% 14%;
+  --accent-foreground: 0 0% 98%;
+  --border: 200 50% 14%;
+  --input: 200 50% 14%;
 }
 
 /* ==========================================================================
    NATURE THEME - Organic & Sustainable
    ========================================================================== */
 .theme-nature {
+  /* Override base theme variables */
+  --background: 60 9% 98%;
+  --foreground: 24 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 10% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 10% 10%;
+  --muted: 60 5% 96%;
+  --muted-foreground: 25 5% 45%;
+  --accent: 60 5% 96%;
+  --accent-foreground: 24 10% 10%;
+  --border: 60 5% 91%;
+  --input: 60 5% 91%;
+  
   /* Primary Brand Colors */
-  --primary: 142 69% 30%;          /* Forest Green #166534 */
+  --primary: 142 76% 36%;          /* Forest Green #059669 */
   --primary-foreground: 0 0% 98%;
-  --secondary: 39 100% 45%;        /* Earth Brown #B45309 */
+  --secondary: 25 75% 47%;         /* Warm Earth #D97706 */
   --secondary-foreground: 0 0% 98%;
   
   /* Accent Colors */
-  --accent-sky: 198 93% 60%;       /* Sky Blue #0EA5E9 */
-  --accent-earth: 25 75% 47%;      /* Earth Orange #D97706 */
-  --accent-sage: 84 33% 65%;       /* Sage Green #94A3B8 */
+  --accent-sage: 84 31% 44%;       /* Sage Green #65A30D */
+  --accent-terra: 39 85% 53%;      /* Terra Cotta #F97316 */
+  --accent-stone: 60 2% 73%;       /* Stone Gray #BABABA */
   
   /* Status Colors */
-  --success: 142 76% 36%;          /* Natural Success Green #059669 */
-  --warning: 45 93% 47%;           /* Natural Warning Amber #D97706 */
-  --danger: 0 65% 51%;             /* Natural Error Red #DC2626 */
-  --info: 198 93% 60%;             /* Natural Info Blue #0EA5E9 */
+  --success: 142 76% 36%;          /* Natural Green #059669 */
+  --warning: 45 93% 47%;           /* Amber #F59E0B */
+  --danger: 0 65% 51%;             /* Natural Red #DC2626 */
+  --info: 199 89% 48%;             /* Sky Blue #0EA5E9 */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-sky) 0%, var(--accent-earth) 100%);
-  --gradient-nature: linear-gradient(135deg, #166534 0%, #059669 25%, #0EA5E9 50%, #D97706 75%, #B45309 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent-sage)) 0%, hsl(var(--accent-terra)) 100%);
+  --gradient-nature: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-sage)) 50%, hsl(var(--secondary)) 100%);
+}
+
+.theme-nature.dark {
+  --background: 24 10% 4%;
+  --foreground: 0 0% 98%;
+  --card: 24 10% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 24 10% 4%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 24 10% 15%;
+  --muted-foreground: 24 5% 64%;
+  --accent: 24 10% 15%;
+  --accent-foreground: 0 0% 98%;
+  --border: 24 10% 15%;
+  --input: 24 10% 15%;
 }
 
 /* ==========================================================================
-   DARK MODE VARIANTS - Enhanced for Dark Themes
+   WARM THEME - Already defined above
    ========================================================================== */
-
-/* Professional Dark */
-.theme-professional.dark {
-  --primary: 217 91% 60%;          /* Lighter Blue for Dark Mode */
-  --secondary: 215 25% 35%;        /* Adjusted Gray-Blue */
-  --accent-blue: 217 91% 70%;      /* Brighter Blue */
-  --accent-gold: 45 93% 60%;       /* Brighter Gold */
-  --accent-teal: 173 58% 50%;      /* Brighter Teal */
-}
-
-/* Creative Dark */
-.theme-creative.dark {
-  --primary: 271 81% 70%;          /* Brighter Purple */
-  --secondary: 322 84% 75%;        /* Brighter Pink */
-  --accent-orange: 25 95% 65%;     /* Brighter Orange */
-  --accent-cyan: 189 94% 55%;      /* Brighter Cyan */
-}
-
-/* Minimal Dark */
-.theme-minimal.dark {
-  --primary: 0 0% 85%;             /* Light Gray for Dark Mode */
-  --secondary: 0 0% 65%;           /* Medium Gray */
-  --accent-charcoal: 0 0% 90%;     /* Light Charcoal */
-  --accent-silver: 0 0% 75%;       /* Light Silver */
-}
 
 /* ==========================================================================
    SEMANTIC COLOR SYSTEM - Consistent Meaning Across Themes

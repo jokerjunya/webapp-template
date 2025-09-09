@@ -33,40 +33,50 @@ const colorCategories = [
     title: 'プロフェッショナル',
     description: 'ビジネス向けの洗練されたカラーパレット',
     colors: [
-      { name: 'Rich Black', value: '#0F172A', description: 'Deep professional base', textColor: 'light' },
-      { name: 'Professional Blue', value: '#3B82F6', description: 'Trust and reliability', textColor: 'light' },
-      { name: 'Corporate Gold', value: '#EAB308', description: 'Premium accent' },
-      { name: 'Sophisticated Teal', value: '#0D9488', description: 'Modern professional', textColor: 'light' },
+      { name: 'Classic Blue', value: '#2563EB', description: 'Timeless professional blue', textColor: 'light' },
+      { name: 'Deep Slate', value: '#1E293B', description: 'Sophisticated authority', textColor: 'light' },
+      { name: 'Elegant Indigo', value: '#6366F1', description: 'Modern elegance', textColor: 'light' },
+      { name: 'Success Green', value: '#059669', description: 'Professional success', textColor: 'light' },
     ]
   },
   {
     title: 'クリエイティブ',
     description: 'アーティスティックで表現力豊かなカラー',
     colors: [
-      { name: 'Creative Purple', value: '#8B5CF6', description: 'Artistic inspiration', textColor: 'light' },
-      { name: 'Creative Pink', value: '#E879F9', description: 'Bold expression' },
-      { name: 'Creative Orange', value: '#FF6B35', description: 'Energetic creativity' },
-      { name: 'Creative Cyan', value: '#06B6D4', description: 'Fresh innovation' },
+      { name: 'Refined Purple', value: '#9333EA', description: 'Creative sophistication', textColor: 'light' },
+      { name: 'Elegant Rose', value: '#E11D48', description: 'Bold artistic expression', textColor: 'light' },
+      { name: 'Rich Purple', value: '#8B5CF6', description: 'Deep creativity', textColor: 'light' },
+      { name: 'Soft Pink', value: '#F472B6', description: 'Gentle inspiration' },
     ]
   },
   {
     title: 'ミニマル',
     description: 'クリーンで洗練されたシンプルカラー',
     colors: [
-      { name: 'Minimal Gray', value: '#333333', description: 'Sophisticated neutral', textColor: 'light' },
-      { name: 'Medium Gray', value: '#737373', description: 'Balanced middle tone', textColor: 'light' },
-      { name: 'Silver Gray', value: '#999999', description: 'Light sophisticated' },
-      { name: 'Soft Success', value: '#22C55E', description: 'Gentle positive feedback' },
+      { name: 'Pure Black', value: '#171717', description: 'Timeless elegance', textColor: 'light' },
+      { name: 'Elegant Gray', value: '#404040', description: 'Sophisticated neutral', textColor: 'light' },
+      { name: 'Modern Gray', value: '#525252', description: 'Contemporary balance', textColor: 'light' },
+      { name: 'Clean Green', value: '#22C55E', description: 'Fresh simplicity' },
     ]
   },
   {
-    title: 'セマンティックカラー',
-    description: 'UI状態とフィードバック用カラー',
+    title: 'オーシャン',
+    description: 'フレッシュで現代的なブルートーン',
     colors: [
-      { name: 'Success Green', value: '#10A37F', description: 'Positive actions & success states', textColor: 'light' },
-      { name: 'Warning Orange', value: '#FB923C', description: 'Caution & attention needed' },
-      { name: 'Error Red', value: '#EF4444', description: 'Errors & destructive actions' },
-      { name: 'Info Blue', value: '#0EA5E9', description: 'Information & neutral feedback' },
+      { name: 'Ocean Blue', value: '#0EA5E9', description: 'Fresh ocean depths' },
+      { name: 'Teal', value: '#22D3EE', description: 'Contemporary freshness' },
+      { name: 'Sea Green', value: '#06B6D4', description: 'Modern aqua' },
+      { name: 'Ocean Success', value: '#059669', description: 'Natural growth', textColor: 'light' },
+    ]
+  },
+  {
+    title: 'ナチュラル',
+    description: 'オーガニックなアースカラー',
+    colors: [
+      { name: 'Forest Green', value: '#059669', description: 'Natural growth', textColor: 'light' },
+      { name: 'Warm Earth', value: '#D97706', description: 'Organic warmth' },
+      { name: 'Sage Green', value: '#65A30D', description: 'Natural wisdom', textColor: 'light' },
+      { name: 'Terra Cotta', value: '#F97316', description: 'Earth elegance' },
     ]
   }
 ];
