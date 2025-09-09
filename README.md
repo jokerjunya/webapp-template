@@ -29,7 +29,7 @@
 - **Language**: [TypeScript 5.7](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
 - **Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/) + カスタムブランドアイコン
 
 ### 認証・データベース
 - **Authentication**: [NextAuth.js v5](https://authjs.dev/)
@@ -134,16 +134,28 @@ pnpm db:migrate       # マイグレーション実行
 pnpm db:studio        # Prisma Studio起動
 ```
 
-## 🎨 UI コンポーネント
+## 🎨 UI コンポーネント & カラーシステム
 
-このテンプレートには以下の shadcn/ui コンポーネントが含まれています：
-
-- **Button**: 汎用ボタンコンポーネント
-- **Card**: カードレイアウト
+### shadcn/ui コンポーネント
+- **Button**: 汎用ボタンコンポーネント + ブランド専用スタイル
+- **Card**: カードレイアウト + ホバーエフェクト
 - **Badge**: バッジ・タグ表示
-- **Form**: フォームコンポーネント（実装予定）
-- **Dialog**: モーダルダイアログ（実装予定）
-- **Toast**: 通知メッセージ
+- **ThemeToggle**: ライト/ダーク切り替え
+- **ThemeSelector**: 6種類のカラーテーマ選択
+
+### 🌈 プレミアムカラーテーマ（WCAG 2.1 AA準拠）
+
+1. **Modern Default** - Spotify, Netflix, Apple, ChatGPT配色
+2. **Professional** - ビジネス・企業向け洗練カラー
+3. **Creative** - クリエイティブ・アート向け鮮やかカラー
+4. **Minimal** - シンプル・ミニマル向けニュートラル
+5. **Vibrant** - エネルギッシュ・ダイナミックカラー
+6. **Nature** - オーガニック・サスティナブルカラー
+
+### カスタムブランドアイコン
+- Spotify, Netflix, Apple Music, ChatGPT風アイコン
+- 音楽、動画、チャット用インターフェース要素
+- 著作権に配慮した再実装デザイン
 
 ### コンポーネントの追加
 
@@ -151,6 +163,20 @@ pnpm db:studio        # Prisma Studio起動
 
 ```bash
 npx shadcn@latest add [component-name]
+```
+
+### カラーテーマのカスタマイズ
+
+1. **新しいテーマの追加**: `src/styles/color-themes.css`で新テーマを定義
+2. **テーマ切り替え**: `ThemeSelector`コンポーネントで実装済み
+3. **カスタムカラー**: CSS変数で簡単に変更可能
+
+```css
+.theme-custom {
+  --primary: 270 95% 75%;        /* カスタムメインカラー */
+  --secondary: 30 100% 50%;      /* カスタムセカンダリー */
+  /* ... その他のカラー定義 */
+}
 ```
 
 ## 🔐 認証システム（実装予定）

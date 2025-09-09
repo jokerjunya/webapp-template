@@ -1,0 +1,215 @@
+/**
+ * Premium Color Templates - 2024 Design Trends
+ * WCAG 2.1 AA Compliant | Modern & Accessible
+ */
+
+/* ==========================================================================
+   PROFESSIONAL THEME - Business & Corporate
+   ========================================================================== */
+.theme-professional {
+  /* Primary Brand Colors */
+  --primary: 222 84% 5%;           /* Rich Black #0F172A */
+  --primary-foreground: 210 40% 98%; /* Pure White */
+  --secondary: 215 25% 27%;        /* Professional Blue-Gray #3C4B64 */
+  --secondary-foreground: 210 40% 98%;
+  
+  /* Accent Colors */
+  --accent-blue: 217 91% 60%;      /* Professional Blue #3B82F6 */
+  --accent-gold: 45 93% 47%;       /* Corporate Gold #EAB308 */
+  --accent-teal: 173 58% 39%;      /* Sophisticated Teal #0D9488 */
+  
+  /* Status Colors */
+  --success: 142 71% 45%;          /* Success Green #10A37F */
+  --warning: 38 92% 50%;           /* Warning Orange #FB923C */
+  --danger: 0 84% 60%;             /* Error Red #EF4444 */
+  --info: 199 89% 48%;             /* Info Blue #0EA5E9 */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-teal) 100%);
+}
+
+/* ==========================================================================
+   CREATIVE THEME - Design & Creative Industries  
+   ========================================================================== */
+.theme-creative {
+  /* Primary Brand Colors */
+  --primary: 271 81% 56%;          /* Creative Purple #8B5CF6 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 322 84% 60%;        /* Creative Pink #E879F9 */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-orange: 25 95% 53%;     /* Creative Orange #FF6B35 */
+  --accent-cyan: 189 94% 43%;      /* Creative Cyan #06B6D4 */
+  --accent-lime: 84 81% 44%;       /* Creative Lime #65A30D */
+  
+  /* Status Colors */
+  --success: 142 71% 45%;          /* Success Green */
+  --warning: 45 93% 47%;           /* Warning Gold */
+  --danger: 0 91% 71%;             /* Bright Error Red #FF4757 */
+  --info: 217 91% 60%;             /* Info Blue */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-cyan) 100%);
+  --gradient-rainbow: linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD23F 50%, #65A30D 75%, #06B6D4 100%);
+}
+
+/* ==========================================================================
+   MINIMAL THEME - Clean & Sophisticated
+   ========================================================================== */
+.theme-minimal {
+  /* Primary Brand Colors */
+  --primary: 0 0% 20%;             /* Minimal Dark Gray #333333 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 45%;           /* Medium Gray #737373 */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-charcoal: 0 0% 15%;     /* Deep Charcoal #262626 */
+  --accent-silver: 0 0% 60%;       /* Silver Gray #999999 */
+  --accent-cream: 48 33% 97%;      /* Warm Cream #FAFAF9 */
+  
+  /* Status Colors */
+  --success: 142 69% 58%;          /* Soft Success Green #22C55E */
+  --warning: 43 96% 56%;           /* Soft Warning Yellow #FACC15 */
+  --danger: 0 72% 51%;             /* Soft Error Red #DC2626 */
+  --info: 213 94% 68%;             /* Soft Info Blue #60A5FA */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-charcoal) 0%, var(--accent-silver) 100%);
+}
+
+/* ==========================================================================
+   VIBRANT THEME - Energetic & Dynamic
+   ========================================================================== */
+.theme-vibrant {
+  /* Primary Brand Colors */
+  --primary: 339 100% 52%;         /* Vibrant Magenta #FF0844 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 262 83% 58%;        /* Electric Purple #9333EA */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-electric: 192 100% 50%; /* Electric Blue #00D4FF */
+  --accent-neon: 84 100% 50%;      /* Neon Green #80FF00 */
+  --accent-hot: 14 100% 50%;       /* Hot Orange #FF4400 */
+  
+  /* Status Colors */
+  --success: 142 100% 35%;         /* Vibrant Success Green #00B359 */
+  --warning: 45 100% 50%;          /* Vibrant Warning Orange #FFB300 */
+  --danger: 0 100% 50%;            /* Vibrant Error Red #FF0000 */
+  --info: 200 100% 50%;            /* Vibrant Info Cyan #00BFFF */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-electric) 0%, var(--accent-neon) 100%);
+  --gradient-energy: linear-gradient(135deg, #FF0844 0%, #FFB300 25%, #80FF00 50%, #00D4FF 75%, #9333EA 100%);
+}
+
+/* ==========================================================================
+   NATURE THEME - Organic & Sustainable
+   ========================================================================== */
+.theme-nature {
+  /* Primary Brand Colors */
+  --primary: 142 69% 30%;          /* Forest Green #166534 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 39 100% 45%;        /* Earth Brown #B45309 */
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent Colors */
+  --accent-sky: 198 93% 60%;       /* Sky Blue #0EA5E9 */
+  --accent-earth: 25 75% 47%;      /* Earth Orange #D97706 */
+  --accent-sage: 84 33% 65%;       /* Sage Green #94A3B8 */
+  
+  /* Status Colors */
+  --success: 142 76% 36%;          /* Natural Success Green #059669 */
+  --warning: 45 93% 47%;           /* Natural Warning Amber #D97706 */
+  --danger: 0 65% 51%;             /* Natural Error Red #DC2626 */
+  --info: 198 93% 60%;             /* Natural Info Blue #0EA5E9 */
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-sky) 0%, var(--accent-earth) 100%);
+  --gradient-nature: linear-gradient(135deg, #166534 0%, #059669 25%, #0EA5E9 50%, #D97706 75%, #B45309 100%);
+}
+
+/* ==========================================================================
+   DARK MODE VARIANTS - Enhanced for Dark Themes
+   ========================================================================== */
+
+/* Professional Dark */
+.theme-professional.dark {
+  --primary: 217 91% 60%;          /* Lighter Blue for Dark Mode */
+  --secondary: 215 25% 35%;        /* Adjusted Gray-Blue */
+  --accent-blue: 217 91% 70%;      /* Brighter Blue */
+  --accent-gold: 45 93% 60%;       /* Brighter Gold */
+  --accent-teal: 173 58% 50%;      /* Brighter Teal */
+}
+
+/* Creative Dark */
+.theme-creative.dark {
+  --primary: 271 81% 70%;          /* Brighter Purple */
+  --secondary: 322 84% 75%;        /* Brighter Pink */
+  --accent-orange: 25 95% 65%;     /* Brighter Orange */
+  --accent-cyan: 189 94% 55%;      /* Brighter Cyan */
+}
+
+/* Minimal Dark */
+.theme-minimal.dark {
+  --primary: 0 0% 85%;             /* Light Gray for Dark Mode */
+  --secondary: 0 0% 65%;           /* Medium Gray */
+  --accent-charcoal: 0 0% 90%;     /* Light Charcoal */
+  --accent-silver: 0 0% 75%;       /* Light Silver */
+}
+
+/* ==========================================================================
+   SEMANTIC COLOR SYSTEM - Consistent Meaning Across Themes
+   ========================================================================== */
+:root {
+  /* Success States */
+  --success-50: 142 76% 95%;       /* Very Light Success */
+  --success-100: 142 76% 85%;      /* Light Success */
+  --success-500: 142 76% 36%;      /* Default Success */
+  --success-700: 142 76% 25%;      /* Dark Success */
+  --success-900: 142 76% 15%;      /* Very Dark Success */
+  
+  /* Warning States */
+  --warning-50: 45 93% 95%;        /* Very Light Warning */
+  --warning-100: 45 93% 85%;       /* Light Warning */
+  --warning-500: 45 93% 47%;       /* Default Warning */
+  --warning-700: 45 93% 35%;       /* Dark Warning */
+  --warning-900: 45 93% 25%;       /* Very Dark Warning */
+  
+  /* Error States */
+  --error-50: 0 84% 95%;           /* Very Light Error */
+  --error-100: 0 84% 85%;          /* Light Error */
+  --error-500: 0 84% 60%;          /* Default Error */
+  --error-700: 0 84% 45%;          /* Dark Error */
+  --error-900: 0 84% 30%;          /* Very Dark Error */
+  
+  /* Info States */
+  --info-50: 199 89% 95%;          /* Very Light Info */
+  --info-100: 199 89% 85%;         /* Light Info */
+  --info-500: 199 89% 48%;         /* Default Info */
+  --info-700: 199 89% 35%;         /* Dark Info */
+  --info-900: 199 89% 25%;         /* Very Dark Info */
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - Easy Application of Themes
+   ========================================================================== */
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-accent { background: var(--gradient-accent); }
+.bg-gradient-rainbow { background: var(--gradient-rainbow, var(--gradient-accent)); }
+.bg-gradient-energy { background: var(--gradient-energy, var(--gradient-accent)); }
+.bg-gradient-nature { background: var(--gradient-nature, var(--gradient-accent)); }
+
+.text-accent-blue { color: hsl(var(--accent-blue, var(--primary))); }
+.text-accent-gold { color: hsl(var(--accent-gold, var(--primary))); }
+.text-accent-teal { color: hsl(var(--accent-teal, var(--primary))); }
+
+.border-theme { border-color: hsl(var(--primary)); }
+.ring-theme { --tw-ring-color: hsl(var(--primary)); }

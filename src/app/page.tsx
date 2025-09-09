@@ -1,12 +1,16 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { ThemeSelector, useColorTheme } from '@/components/ui/theme-selector';
 import { BrandIcons } from '@/components/icons/brand-icons';
 import { Github, Star, Zap, Shield, Smartphone, Play, Sparkles, Globe, Code2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const { theme, setTheme } = useColorTheme();
   const features = [
     {
       icon: <BrandIcons.Spotify className="h-8 w-8" />,
@@ -82,7 +86,8 @@ export default function HomePage() {
               <BrandIcons.MusicNote className="h-8 w-8 text-primary" />
               <span className="font-bold text-xl">ModernUI</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <ThemeSelector currentTheme={theme} onThemeChange={setTheme} />
               <ThemeToggle />
               <Button variant="outline" size="sm" asChild>
                 <Link href="https://github.com/jokerjunya/webapp-template" target="_blank" rel="noopener noreferrer">

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Premium Color Themes */
+@import '../styles/color-themes.css';
+
 @layer base {
   :root {
     /* Modern Design System inspired by Spotify, Netflix, Apple Music, ChatGPT */
